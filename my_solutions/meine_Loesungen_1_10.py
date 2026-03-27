@@ -106,7 +106,18 @@ def aufgabe_007_ersetze_zeichen(text: str, alt: str, neu: str) -> str:
 # Gruppe: Alexander, Erik, Jan B
 def aufgabe_008_zaehle_wort(text: str, wort: str) -> int:
     """Zähle, wie oft wort im Text vorkommt (wortgenau)."""
-    pass
+    # Entferne Satzzeichen und mache alles klein
+    satzzeichen = ".,!?;:()\"'"
+    bereinigt = text.lower()
+
+    for zeichen in satzzeichen:
+        bereinigt = bereinigt.replace(zeichen, " ")
+
+    # Wörter splitten
+    woerter = bereinigt.split()
+
+    # Zählen
+    return woerter.count(wort.lower())
 
 
 # Gruppe: Alexander, Erik, Jan B

@@ -78,6 +78,14 @@ def test_aufgabe_007():
     print("✓ Aufgabe 007: Ersetze alle Vorkommen von alt durch neu in text  - OK")
 
 
+def test_aufgabe_008():
+    """Teste, ob alle Wort Vorkommen im Text richtig gezählt sind"""
+    assert aufgabe_008_zaehle_wort("Wir kämpfen, wir hoffen, wir siegen.", "Wir") == 3
+    assert aufgabe_008_zaehle_wort("Ich ging schnell in den Wald. Im Wald war es schnell dunkel. Die Dunkelheit im Wald machte mir Angst, aber ich ging weiter in den Wald...", "Bahnhof") == 0
+    assert aufgabe_008_zaehle_wort("Sie will alles, sie kriegt alles!", "alles") == 2
+    assert aufgabe_008_zaehle_wort("Ich ging schnell in den Wald. Im Wald war es schnell dunkel. Die Dunkelheit im Wald machte mir Angst, aber ich ging weiter in den Wald. Ein Baum stand im Weg. Hinter dem Baum sah ich einen anderen Baum. Der Wald war mein Ziel, doch der Wald war unheimlich", "Wald") == 6
+    print("✓ Aufgabe 008: Zähle, wie oft wort im Text vorkommt (wortgenau)  - OK")
+
 def run_all_tests():
     """Führe alle Tests aus"""
     print("\n🧪 Teste meine Lösungen...\n")
@@ -89,7 +97,7 @@ def run_all_tests():
     test_aufgabe_005()
     test_aufgabe_006()
     test_aufgabe_007()
-    # test_aufgabe_008()
+    test_aufgabe_008()
     # test_aufgabe_009()
     # test_aufgabe_010()
 
