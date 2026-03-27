@@ -86,6 +86,16 @@ def test_aufgabe_008():
     assert aufgabe_008_zaehle_wort("Ich ging schnell in den Wald. Im Wald war es schnell dunkel. Die Dunkelheit im Wald machte mir Angst, aber ich ging weiter in den Wald. Ein Baum stand im Weg. Hinter dem Baum sah ich einen anderen Baum. Der Wald war mein Ziel, doch der Wald war unheimlich", "Wald") == 6
     print("✓ Aufgabe 008: Zähle, wie oft wort im Text vorkommt (wortgenau)  - OK")
 
+
+def test_aufgabe_009():
+    """Teste, ob der Text nach limit Zeichen abgeschnitten und fall nötig, '...' eingefügt"""
+    assert aufgabe_009_kuerze_text("Ich ging schnellen Schrittes in den Forst. Dort wurde es rasch dunkel. Die düstere Atmosphäre im Gehölz flößte mir Angst ein, dennoch ging ich weiter. Ein Baum versperrte den Weg, hinter dem sich ein weiteres Gewächs abzeichnete. Das Waldgebiet war mein Ziel, doch es wirkte unheimlich.", 100) == "Ich ging schnellen Schrittes in den Forst. Dort wurde es rasch dunkel. Die düstere Atmosphäre im Geh..."
+    # Test 2: Text kürzer als limit
+    assert aufgabe_009_kuerze_text("Hallo Welt",100) == "Hallo Welt"
+    # Test 3: Text genau limit lang
+    assert aufgabe_009_kuerze_text("Hallo Welt", 10)
+    print("✓ Aufgabe 009: Schneide den Text nach limit Zeichen ab und füge '...' an, falls nötig.  - OK")
+
 def run_all_tests():
     """Führe alle Tests aus"""
     print("\n🧪 Teste meine Lösungen...\n")
@@ -98,7 +108,7 @@ def run_all_tests():
     test_aufgabe_006()
     test_aufgabe_007()
     test_aufgabe_008()
-    # test_aufgabe_009()
+    test_aufgabe_009()
     # test_aufgabe_010()
 
     print("\n🎉 Alle getesteten Aufgaben bestanden!")
