@@ -69,6 +69,15 @@ def test_aufgabe_006():
     assert aufgabe_006_capitalize_saetze("hello world!   how are you?") == "Hello world! How are you?"
     print("✓ Aufgabe 006: erster Buchstabe jedes Satzes großgeschrieben - OK")
 
+
+def test_aufgabe_007():
+    """Teste, ob alle Vorkommen von alt durch neu in text ersetzt sind"""
+    assert aufgabe_007_ersetze_zeichen("Hello World!", "World", "Python") == "Hello Python!"
+    assert aufgabe_007_ersetze_zeichen("Love is in the air!", "Love", "Code") == "Code is in the air!"
+    assert aufgabe_007_ersetze_zeichen("Hello World?", "?", "!") == "Hello World!"
+    print("✓ Aufgabe 007: Ersetze alle Vorkommen von alt durch neu in text  - OK")
+
+
 def run_all_tests():
     """Führe alle Tests aus"""
     print("\n🧪 Teste meine Lösungen...\n")
@@ -79,7 +88,7 @@ def run_all_tests():
     test_aufgabe_004()
     test_aufgabe_005()
     test_aufgabe_006()
-    # test_aufgabe_007()
+    test_aufgabe_007()
     # test_aufgabe_008()
     # test_aufgabe_009()
     # test_aufgabe_010()
