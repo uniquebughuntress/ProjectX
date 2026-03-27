@@ -12,6 +12,7 @@ from pathlib import Path
 
 # Importiere deine Lösungen
 from my_solutions.meine_Loesungen_1_10 import *
+from my_solutions.meine_Loesungen_81_90 import aufgabe_087_bubble_sort
 
 # Füge das Hauptverzeichnis zum Python-Pfad hinzu
 sys.path.insert(0, str(Path(__file__).parent))
@@ -35,7 +36,38 @@ def test_aufgabe_002():
     print("✓ Aufgabe 002: Vokale zählen - OK")
 
 
-# Füge hier weitere Tests hinzu, während du die Aufgaben löst
+def test_aufgabe_003():
+    """Teste, ob der Text ein Palindrom ist (Groß/Klein ignorieren)"""
+    assert aufgabe_003_ist_palindrom("Hallo World") == False
+    assert aufgabe_003_ist_palindrom("Rentner") == True
+    assert aufgabe_003_ist_palindrom(" ") == True
+    assert aufgabe_003_ist_palindrom("Das ist kein Palindrom") == False
+    assert aufgabe_003_ist_palindrom("Reliefpfeiler") == True
+    print("✓ Aufgabe 003: Palindrom Prüfung - OK")
+
+
+def test_aufgabe_004():
+    """Teste, ob alles großgeschrieben ist"""
+    assert aufgabe_004_zu_grossbuchstaben("Code is in the air!") == "CODE IS IN THE AIR!"
+    assert aufgabe_004_zu_grossbuchstaben("") == ""
+    print("✓ Aufgabe 004: alles großgeschrieben - OK")
+
+
+def test_aufgabe_005():
+    """Teste, ob alles kleingeschrieben ist"""
+    assert aufgabe_005_zu_kleinbuchstaben("Code is in the air!") == "code is in the air!"
+    assert aufgabe_005_zu_kleinbuchstaben("") == ""
+    print("✓ Aufgabe 005: alles kleingeschrieben - OK")
+
+
+def test_aufgabe_006():
+    """Test, ob erste Buchstaben jedes Satzes in Großbuchstaben umgewandelt"""
+    assert aufgabe_006_capitalize_saetze("was für ein schöner Tag!") == "Was für ein schöner Tag!"
+    assert aufgabe_006_capitalize_saetze("ariella") == "Ariella"
+    assert aufgabe_006_capitalize_saetze("hallo. wie geht es dir? gut!") == "Hallo. Wie geht es dir? Gut!"
+    assert aufgabe_006_capitalize_saetze("hello world!how are you?") == "Hello world! How are you?"
+    assert aufgabe_006_capitalize_saetze("hello world!   how are you?") == "Hello world! How are you?"
+    print("✓ Aufgabe 006: erster Buchstabe jedes Satzes großgeschrieben - OK")
 
 def run_all_tests():
     """Führe alle Tests aus"""
@@ -43,8 +75,14 @@ def run_all_tests():
 
     test_aufgabe_001()
     test_aufgabe_002()
-    # test_aufgabe_003()  # Aktiviere wenn gelöst
-    # test_aufgabe_004()  # Aktiviere wenn gelöst
+    test_aufgabe_003()
+    test_aufgabe_004()
+    test_aufgabe_005()
+    test_aufgabe_006()
+    # test_aufgabe_007()
+    # test_aufgabe_008()
+    # test_aufgabe_009()
+    # test_aufgabe_010()
 
     print("\n🎉 Alle getesteten Aufgaben bestanden!")
 
