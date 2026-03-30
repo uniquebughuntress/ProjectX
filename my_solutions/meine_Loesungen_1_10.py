@@ -131,6 +131,13 @@ def aufgabe_009_kuerze_text(text: str, limit: int) -> str:
 # Gruppe: Alexander, Erik, Jan B
 def aufgabe_010_teile_worte(text: str) -> list[str]:
     """Zerlege einen Satz in Wörter, getrennt nach Leerzeichen."""
-    pass
+    woerter = text.split()
+    return woerter
+
+
+
+
+
+
 
 

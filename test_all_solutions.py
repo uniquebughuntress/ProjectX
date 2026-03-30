@@ -96,6 +96,12 @@ def test_aufgabe_009():
     assert aufgabe_009_kuerze_text("Hallo Welt", 10)
     print("✓ Aufgabe 009: Schneide den Text nach limit Zeichen ab und füge '...' an, falls nötig.  - OK")
 
+
+def test_aufgabe_010():
+    """Teste, ob ein Satz in Wörter, getrennt nach Leerzeichen, zerlegt und in einer Liste ist"""
+    assert aufgabe_010_teile_worte("Was für ein schöner Tag!") == ['Was', 'für', 'ein', 'schöner', 'Tag!']
+
+
 def run_all_tests():
     """Führe alle Tests aus"""
     print("\n🧪 Teste meine Lösungen...\n")
@@ -109,7 +115,7 @@ def run_all_tests():
     test_aufgabe_007()
     test_aufgabe_008()
     test_aufgabe_009()
-    # test_aufgabe_010()
+    test_aufgabe_010()
 
     print("\n🎉 Alle getesteten Aufgaben bestanden!")
 
