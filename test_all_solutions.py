@@ -12,7 +12,7 @@ from pathlib import Path
 
 # Importiere deine Lösungen
 from my_solutions.meine_Loesungen_1_10 import *
-from my_solutions.meine_Loesungen_81_90 import aufgabe_087_bubble_sort
+from my_solutions.meine_Loesungen_11_20 import *
 
 # Füge das Hauptverzeichnis zum Python-Pfad hinzu
 sys.path.insert(0, str(Path(__file__).parent))
@@ -98,8 +98,36 @@ def test_aufgabe_009():
 
 
 def test_aufgabe_010():
-    """Teste, ob ein Satz in Wörter, getrennt nach Leerzeichen, zerlegt und in einer Liste ist"""
-    assert aufgabe_010_teile_worte("Was für ein schöner Tag!") == ['Was', 'für', 'ein', 'schöner', 'Tag!']
+    """Teste Zerlegung in Wörter"""
+    assert aufgabe_010_teile_worte("Hallo Welt Python") == ["Hallo", "Welt", "Python"]
+    assert aufgabe_010_teile_worte("") == []
+    print("✓ Aufgabe 010: Wörter teilen - OK")
+
+
+def test_aufgabe_011():
+    """Teste Verbinden von Wörtern"""
+    assert aufgabe_011_verbinde_worte(["Hallo", "Welt"], " ") == "Hallo Welt"
+    assert aufgabe_011_verbinde_worte(["a", "b", "c"], ", ") == "a, b, c"
+    assert aufgabe_011_verbinde_worte(["Hallo", "meine", "Python", "Welt"], ",") == "Hallo,meine,Python,Welt"
+    print("✓ Aufgabe 011: Wörter verbinden - OK")
+
+
+def test_aufgabe_012():
+    """Teste längstes Wort finden"""
+    assert aufgabe_012_laengstes_wort(["Hallo", "meine", "Python", "Welt"]) == "Python"
+    assert aufgabe_012_laengstes_wort(["a", "abc", "ab"]) == "abc"
+    assert aufgabe_012_laengstes_wort([]) is None
+    assert aufgabe_012_laengstes_wort(["gleich", "lang"]) == "gleich"
+    print("✓ Aufgabe 012: Längstes Wort - OK")
+
+
+def test_aufgabe_013():
+    """Teste Ziffern zählen"""
+    assert aufgabe_013_zaehle_ziffern("Hallo123") == 3
+    assert aufgabe_013_zaehle_ziffern("Keine Ziffern") == 0
+    assert aufgabe_013_zaehle_ziffern("1 2 3 4 5") == 5
+    assert aufgabe_013_zaehle_ziffern("") == 0
+    print("✓ Aufgabe 013: Ziffern zählen - OK")
 
 
 def run_all_tests():
@@ -116,6 +144,10 @@ def run_all_tests():
     test_aufgabe_008()
     test_aufgabe_009()
     test_aufgabe_010()
+    test_aufgabe_011()
+    test_aufgabe_012()
+    test_aufgabe_013()
+    #test_aufgabe_014()
 
     print("\n🎉 Alle getesteten Aufgaben bestanden!")
 
